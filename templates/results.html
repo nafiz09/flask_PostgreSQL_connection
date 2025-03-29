@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detection Results</title>
+</head>
+<body>
+    <h1>Detection Results</h1>
+    <table border="1">
+        <tr>
+            <th>Video Name</th>
+            <th>Timestamp</th>
+            <th>Object Class</th>
+            <th>Confidence</th>
+            <th>BBox (x1, y1, x2, y2)</th>
+        </tr>
+        {% for detection in detections %}
+        <tr>
+            <td>{{ detection[0] }}</td>
+            <td>{{ detection[1] }}</td>
+            <td>{{ detection[2] }}</td>
+            <td>{{ detection[3] }}</td>
+            <td>({{ detection[4] }}, {{ detection[5] }}, {{ detection[6] }}, {{ detection[7] }})</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
